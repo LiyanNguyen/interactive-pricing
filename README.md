@@ -5,10 +5,12 @@ A Modern Design Webpage with slider that changes subscription prices based on us
 This is a solution to the [Interactive pricing component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8).
 
 ### Screenshot
+![method-7](https://user-images.githubusercontent.com/50958126/163115578-aa853540-dba7-4b4a-a738-4b337e2d3edd.png)
+![method-8](https://user-images.githubusercontent.com/50958126/163115595-7d988d34-07b4-4ad8-9fbd-550e6cdb3c0c.png)
 
 ### Links
-- Solution URL: 
-- Live Site URL: 
+- Solution URL: https://github.com/LiyanNguyen/interactive-pricing
+- Live Site URL: https://liyannguyen.github.io/interactive-pricing/
 
 ### My Process
 - Design the Desktop Viewport first, then the Mobile viewport
