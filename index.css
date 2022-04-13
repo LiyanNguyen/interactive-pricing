@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+:root {
+	/* Primary Colors */
+	--fullSliderBar: hsl(174, 77%, 80%);
+	--sliderBackground: hsl(174, 86%, 45%);
+	--discountBackground: hsl(14, 92%, 95%);
+	--discountText: hsl(15, 100%, 70%);
+	--CTAText: hsl(226, 100%, 87%);
+
+	/* Neutral Colors */
+	--componentBackground: hsl(0, 0%, 100%);
+	--mainBackground: hsl(230, 100%, 99%);
+	--emptySliderBar: hsl(224, 65%, 95%);
+	--toggleBackground: hsl(223, 50%, 87%);
+	--text: hsl(225, 20%, 60%);
+	--CTABackgroundAndEmphasizeText: hsl(227, 35%, 25%);
+
+	font-size: 15px;
+	font-family: 'Manrope', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(images/bg-pattern.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	height: 82vh;
+	width: 50vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.intro {
+	height: 23%;
+	width: 100%;
+	background-image: url(images/pattern-circles.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 1rem;
+	margin-bottom: 6vh;
+}
+
+.intro h1 {
+	font-size: 2rem;
+	color: var(--CTABackgroundAndEmphasizeText);
+}
+
+.intro p {
+	font-weight: 800;
+	color: var(--text);
+}
+
+.pricing-card {
+	height: 70%;
+	width: 75%;
+	background-color: var(--componentBackground);
+	border-radius: .5rem;
+	padding: 2rem 3rem;
+	box-shadow: 0 1rem 3rem .1rem rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.card-top {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	height: 35%;
+}
+
+.page-views {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	font-weight: 800;
+	color: var(--text);
+}
+
+.price {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: .5rem;
+}
+
+.price h2 {
+	font-size: 2.5rem;
+	color: var(--CTABackgroundAndEmphasizeText);
+}
+
+.price p {
+	color: var(--text);
+}
+
+.slider-container {
+	width: 100%;
+	height: .5rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.slider-track-1,
+.slider-track-2,
+.slider-track-3,
+.slider-track-4,
+.slider-track-5 {
+	position: relative;
+	height: .5rem;
+	width: 20%;
+	background-color: var(--emptySliderBar);
+	cursor: pointer;
+	transition: 1s ease;
+}
+
+.slider-track-1 {
+	border-radius: 1rem 0 0 1rem;
+}
+
+.slider-track-5 {
+	border-radius: 0 1rem 1rem 0;
+}
+
+/* default page onload */
+.slider-track-1,
+.slider-track-2,
+.slider-track-3 {
+	background-color: var(--fullSliderBar);
+}
+
+.slider-button {
+	position: absolute;
+	left: calc(60% - 2rem);
+	height: 2.5rem;
+	width: 2.5rem;
+	border-radius: 50%;
+	background-color: var(--sliderBackground);
+	background-image: url(images/icon-slider.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	box-shadow: 0 .5rem 1rem .5rem hsla(174, 86%, 45%, 0.3);
+	transition: 0.5s ease;
+}
+
+.card-middle {
+	height: 20%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 1rem;
+}
+
+.card-middle p {
+	color: var(--text);
+}
+
+@keyframes moveRight {
+	0% {transform: translateX(0);}
+	100% {transform: translateX(1.5rem);}
+}
+
+@keyframes moveLeft {
+	0% {transform: translateX(1.5rem);}
+	100% {transform: translateX(0);}
+}
+
+.animate-right {
+	animation: moveRight 0.3s ease forwards;
+}
+
+.animate-left {
+	animation: moveLeft 0.3s ease forwards;
+}
+
+.toggle-buton {
+	width: 3.3rem;
+	height: 1.5rem;
+	border-radius: 1rem;
+	background-color: var(--toggleBackground);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.toggle-buton:hover {
+	background-color: var(--fullSliderBar);
+}
+
+.white-circle {
+	position: relative;
+	left: 0.3rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 1rem;
+	background-color: white;
+}
+
+.discount,
+.mobile-discount {
+	background-color: var(--discountBackground);
+	color: var(--discountText);
+	border-radius: 1rem;
+	padding-block: .2rem;
+	padding-inline: .5rem;
+	font-size: .8rem;
+	font-weight: 800;
+}
+
+.mobile-discount {
+	display: none;
+}
+
+.divider {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: .1rem;
+	background-color: var(--toggleBackground);
+	margin-inline: -3rem;
+	opacity: .5;
+}
+
+.card-bottom {
+	height: 35%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card-bottom ul li {
+	list-style: none;
+	color: var(--text);
+	padding-block: .3rem;
+}
+
+.card-bottom button {
+	padding: .8rem 2rem;
+	border-radius: 2rem;
+	border: none;
+	background-color: var(--CTABackgroundAndEmphasizeText);
+	color: var(--CTAText);
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.card-bottom button:hover {
+	color: var(--componentBackground);
+}
+
+@media screen and (max-width: 1025px) {
+
+	body {
+		min-height: 120vh;
+		background-size: 350%;
+	}
+
+	main {
+		height: 100vh;
+		width: 90vw;
+	}
+
+	.intro h1 {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	
+	.intro p {
+		font-size: 1rem;
+		text-align: center;
+		padding-inline: 4rem;
+	}
+
+	.pricing-card {
+		width: 100%;
+		padding: 2rem;
+	}
+
+	.page-views {
+		width: 100%;
+		justify-content: center;
+		order: 1;
+	}
+	
+	.price {
+		width: 100%;
+		justify-content: center;
+		order: 3;
+	}
+	
+	.slider-container {
+		order: 2;
+	}
+
+	.card-middle {
+		justify-content: center;
+		gap: .5rem;
+		position: relative;
+	}
+
+	.discount {
+		display: none;
+	}
+
+	.mobile-discount {
+		display: block;
+		position: absolute;
+		right: -1.5rem;
+	}
+
+	.card-bottom {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.card-bottom ul {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	
+	.card-bottom ul li {
+		text-align: center;
+	}
+}
